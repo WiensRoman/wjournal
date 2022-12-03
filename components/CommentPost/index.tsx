@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Menu, MenuItem, Paper, Typography } from '@mui/material';
+import {IconButton, Menu, MenuItem, Paper, Typography} from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import styles from './CommentPost.module.scss';
@@ -14,7 +14,7 @@ interface CommentPostProps {
     };
 }
 
-export const CommentPost: React.FC<CommentPostProps> = ({ user, post, text }) => {
+export const CommentPost: React.FC<CommentPostProps> = ({user, post, text}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -26,11 +26,11 @@ export const CommentPost: React.FC<CommentPostProps> = ({ user, post, text }) =>
     };
 
     return (
-        <Paper elevation={0} className="p-20" classes={{ root: styles.paper }}>
+        <Paper elevation={0} className="p-20" classes={{root: styles.paper}}>
             <Typography variant="h6" className={styles.title}>
                 <a href="#">{post.title}</a>
                 <IconButton onClick={handleClick}>
-                    <MoreVertIcon />
+                    <MoreVertIcon/>
                 </IconButton>
             </Typography>
             <Typography className="mt-10 mb-15">{text}</Typography>

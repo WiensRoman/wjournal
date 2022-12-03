@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(242,242,242) !important;
+  background-color: rgb(242, 242, 242) !important;
   font-family: Roboto, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
@@ -40,4 +40,9 @@ a {
   display: flex;
   padding: 0 30px;
   padding-top: 80px;
+}
+
+.main-layout-white {
+  background-color: #fff;
+  height: 100vh;
 }

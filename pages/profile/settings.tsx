@@ -1,4 +1,4 @@
-import { MainLayout } from "../../layouts/MainLayout";
+import {MainLayout} from "../../layouts/MainLayout";
 import {Button, Divider, Paper, TextField, Typography} from "@mui/material";
 
 export default function Settings() {

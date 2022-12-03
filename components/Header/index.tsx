@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Paper,Button,IconButton,Avatar } from "@mui/material";
+import {Paper, Button, IconButton, Avatar} from "@mui/material";
 import styles from './Header.module.scss'
 import {
     SearchOutlined as SearchIcon,
@@ -26,29 +26,32 @@ export const Header: React.FC = () => {
                 </Link>
 
                 <div className={styles.searchBlock}>
-                    <SearchIcon />
+                    <SearchIcon/>
                     <input placeholder="Поиск"/>
                 </div>
-                <Button variant="contained" className={styles.penButton}>
-                    Новая запись
-                </Button>
+                <Link href="/write">
+                    <Button variant="contained" className={styles.penButton}>
+                        Новая запись
+                    </Button>
+                </Link>
+
             </div>
 
-                <div className="d-flex align-center">
-                    <IconButton>
-                        <MessageIcon />
-                    </IconButton>
-                    <IconButton>
-                        <NotificationIcon />
-                    </IconButton>
-                    <Link className="d-flex align-center" href="/profile/1">
-                            <Avatar
-                                className={styles.avatar}
-                                alt="Remy Sharp"
-                                src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
-                            />
-                            <ArrowBottom />
-                    </Link>
+            <div className="d-flex align-center">
+                <IconButton>
+                    <MessageIcon/>
+                </IconButton>
+                <IconButton>
+                    <NotificationIcon/>
+                </IconButton>
+                <Link className="d-flex align-center" href="/profile/1">
+                    <Avatar
+                        className={styles.avatar}
+                        alt="Remy Sharp"
+                        src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
+                    />
+                    <ArrowBottom/>
+                </Link>
             </div>
         </Paper>
     );

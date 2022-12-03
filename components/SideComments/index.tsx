@@ -47,11 +47,12 @@ interface CommentItemProps {
     id: number;
 }
 
-const CommentItem: React.FC<CommentItemProps> = ({ user, text, post }) => {
+const CommentItem: React.FC<CommentItemProps> = ({user, text, post}) => {
     return (
         <div className={styles.commentItem}>
             <div className={styles.userInfo}>
-                <img src="https://leonardo.osnova.io/598fc957-a3f6-598c-b6f9-a033c3941d12/-/scale_crop/64x64/-/format/webp/" />
+                <img
+                    src="https://leonardo.osnova.io/598fc957-a3f6-598c-b6f9-a033c3941d12/-/scale_crop/64x64/-/format/webp/"/>
                 <a href="#">
                     <b>{user.fullname}</b>
                 </a>
@@ -68,7 +69,7 @@ export const SideComments = () => {
     return (
         <div className={styles.root}>
             <h3>
-                Комментарии <ArrowRightIcon />
+                Комментарии <ArrowRightIcon/>
             </h3>
             {items.map((obj) => (
                 <CommentItem key={obj.id} {...obj} />

@@ -21,10 +21,10 @@ const PostActions: React.FC = () => {
     return (
         <ul style={styles}>
             <li>
-                <IconButton size="small"><CommentsIcon /></IconButton>
+                <IconButton size="small"><CommentsIcon/></IconButton>
             </li>
             <li>
-                <IconButton size="small"><RepostIcon /></IconButton>
+                <IconButton size="small"><RepostIcon/></IconButton>
             </li>
             <li>
                 <IconButton size="small"><FavoriteIcon/></IconButton>

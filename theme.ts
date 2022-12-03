@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material"
+import {createTheme} from "@mui/material"
 
 export const theme = createTheme({
     palette: {
@@ -7,20 +7,27 @@ export const theme = createTheme({
         }
     },
     components: {
+        /*MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8
+                }
+            },
+        },*/
         MuiButtonBase: {
             defaultProps: {
                 disableRipple: true,
-                },
+            },
         },
         MuiPaper: {
-            styleOverrides : {
+            styleOverrides: {
                 rounded: {
                     borderRadius: 8
                 }
             },
         },
         MuiButton: {
-            styleOverrides : {
+            styleOverrides: {
                 root: {
                     borderRadius: '10px',
                     textTransform: 'inherit',

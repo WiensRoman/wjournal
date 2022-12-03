@@ -1,16 +1,14 @@
 import React from 'react';
-import { NextPage } from 'next';
-import { TextField } from '@mui/material';
-//import {MainLayout} from '../components/sideComments';
+import {NextPage} from 'next';
+import {MainLayout} from '../layouts/MainLayout';
+import {WriteForm} from "../components/WriteForm";
 
-/*const WritePage: NextPage = () => {
+const WritePage: NextPage = () => {
     return (
-    <MainLayout>
-        <div style={{backgroundColor: '#fff'}}>
-           <TextField placeholder="Заголовок"/>
-        </div>
-    </MainLayout>
+        <MainLayout className="main-layout-white" contentFullWidth hideComments hideMenu>
+            <WriteForm/>
+        </MainLayout>
     );
-};*/
+};
 
-// export default WritePage;
+export default WritePage;

@@ -1,6 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import {Paper, Button, IconButton, Avatar} from "@mui/material";
+import {
+    Paper,
+    Button,
+    IconButton,
+    Avatar,
+} from "@mui/material";
 import styles from './Header.module.scss'
 import {
     SearchOutlined as SearchIcon,
@@ -8,9 +13,21 @@ import {
     Menu as MenuIcon,
     ExpandMoreOutlined as ArrowBottom,
     NotificationsNoneOutlined as NotificationIcon,
+    AccountCircleOutlined as UserIcon,
 } from '@mui/icons-material';
+import { AuthDialog } from "../AuthDialog";
 
 export const Header: React.FC = () => {
+    const [authVisible, setAuthVisible] = React.useState(false);
+
+    const openAuthDialog = () => {
+        setAuthVisible(true);
+    };
+
+    const closeAuthDialog = () => {
+        setAuthVisible(false);
+    };
+
     return (
         <Paper classes={{root: styles.root}} elevation={0}>
             <div className="d-flex align-center">
@@ -38,21 +55,26 @@ export const Header: React.FC = () => {
             </div>
 
             <div className="d-flex align-center">
-                <IconButton>
+                <IconButton >
                     <MessageIcon/>
                 </IconButton>
                 <IconButton>
                     <NotificationIcon/>
                 </IconButton>
-                <Link className="d-flex align-center" href="/profile/1">
-                    <Avatar
-                        className={styles.avatar}
-                        alt="Remy Sharp"
-                        src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
-                    />
-                    <ArrowBottom/>
-                </Link>
+                {/*<Link className="d-flex align-center" href="/profile/1">*/}
+                {/*    <Avatar*/}
+                {/*        className={styles.avatar}*/}
+                {/*        alt="Remy Sharp"*/}
+                {/*        src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"*/}
+                {/*    />*/}
+                {/*    <ArrowBottom/>*/}
+                {/*</Link>*/}
+                <div className={styles.loginButton} onClick={openAuthDialog}>
+                    <UserIcon />
+                    Войти
+                </div>
             </div>
+            <AuthDialog onClose={closeAuthDialog} visible={authVisible} />
         </Paper>
     );
 };

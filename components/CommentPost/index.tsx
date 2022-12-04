@@ -17,7 +17,7 @@ interface CommentPostProps {
 export const CommentPost: React.FC<CommentPostProps> = ({user, post, text}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleClick = (event) => {
+    const handleClick = (event: any) => {
         setAnchorEl(event.currentTarget);
     };
 

@@ -11,7 +11,7 @@ interface WriteFormProps {
 }
 
 export const WriteForm: React.FC<WriteFormProps> = ({title}) => {
-setTimeout
+
     return (
         <div>
             <Input classes={{root: styles.titleField}} placeholder="Заголовок" defaultValue={title}/>

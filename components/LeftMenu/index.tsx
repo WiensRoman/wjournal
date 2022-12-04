@@ -8,6 +8,7 @@ import {
     TrendingUpOutlined as TrendingIcon,
     FormatListBulletedOutlined as ListIcon,
 } from '@mui/icons-material';
+import {useRouter} from "next/router";
 
 const menu = [
     {text: 'Лента', icon: <FireIcon/>, path: '/'},
@@ -18,13 +19,16 @@ const menu = [
 
 
 export const LeftMenu: React.FC = () => {
+    const router = useRouter();
+
+    // @ts-ignore
     return (
         <div className={styles.menu}>
             <ul>
                 {menu.map((obj) => (
                     <li key={obj.path}>
                         <Link href={obj.path}>
-                            <Button>
+                            <Button variant={router.asPath == obj.path ? 'contained' : 'default'}>
                                 {obj.icon}
                                 {obj.text}
                             </Button>

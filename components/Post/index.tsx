@@ -23,10 +23,10 @@ export const Post: React.FC = () => {
                 Games. В настоящее время разрабатывается под брендом EA Sports.
             </Typography>
             <Image
-                src="https://img5.goodfon.ru/original/1920x1080/4/fa/the-witcher-3-wild-hunt-vedmak-3-dikaia-okhota-geralt-geralt.jpg"
+                src="https://pic.rutubelist.ru/video/39/91/399158f423d3c7b009035254e70f6442.jpg"
                 height={500}
                 width={600}
-                alt=""
+                alt="Witcher"
             />
             <PostActions/>
         </Paper>

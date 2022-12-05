@@ -12,6 +12,7 @@
     "@editorjs/editorjs": "^2.26.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
     "@types/node": "18.11.9",
@@ -24,8 +25,10 @@
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.40.0",
     "sass": "^1.56.1",
     "scss": "^0.2.4",
-    "typescript": "4.9.3"
+    "typescript": "4.9.3",
+    "yup": "^0.32.11"
   }
 }

@@ -6,6 +6,6 @@ export const LoginFormSchema = yup.object({
 }).required();
 
 export const RegisterFormSchema = yup.object({
-    fullname: yup.string().required('Имя и фамилия обязательны')
+    fullName: yup.string().required('Имя и фамилия обязательны')
 })
     .concat(LoginFormSchema)

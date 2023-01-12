@@ -16,8 +16,11 @@ import {
     AccountCircleOutlined as UserIcon,
 } from '@mui/icons-material';
 import { AuthDialog } from "../AuthDialog";
+import {useAppSelector} from "../../redux/hooks";
+import {selectUserData} from "../../redux/slices/user";
 
 export const Header: React.FC = () => {
+    const userData = useAppSelector(selectUserData)
     const [authVisible, setAuthVisible] = React.useState(false);
 
     const openAuthDialog = () => {
@@ -61,18 +64,20 @@ export const Header: React.FC = () => {
                 <IconButton>
                     <NotificationIcon/>
                 </IconButton>
-                {/*<Link className="d-flex align-center" href="/profile/1">*/}
-                {/*    <Avatar*/}
-                {/*        className={styles.avatar}*/}
-                {/*        alt="Remy Sharp"*/}
-                {/*        src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"*/}
-                {/*    />*/}
-                {/*    <ArrowBottom/>*/}
-                {/*</Link>*/}
+                {
+                    userData ? <Link className="d-flex align-center" href="/profile/1">
+                    <Avatar
+                        className={styles.avatar}
+                        alt="Remy Sharp"
+                        src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
+                    />
+                    <ArrowBottom/>
+                </Link> :
                 <div className={styles.loginButton} onClick={openAuthDialog}>
                     <UserIcon />
                     Войти
                 </div>
+                }
             </div>
             <AuthDialog onClose={closeAuthDialog} visible={authVisible} />
         </Paper>

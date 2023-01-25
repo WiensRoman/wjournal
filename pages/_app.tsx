@@ -1,14 +1,16 @@
-import '../styles/globals.scss';
-import type {AppProps} from 'next/app';
-import 'macro-css';
-import {theme} from '../theme';
-import {ThemeProvider, CssBaseline} from "@mui/material";
 import Head from "next/head";
-import {Header} from "../components/Header"
-import {store} from "../redux/store";
+import {ThemeProvider, CssBaseline} from "@mui/material";
 import {Provider} from "react-redux";
+import type {AppProps} from 'next/app';
 
-function MyApp({Component, pageProps}: AppProps) {
+import {Header} from "../components/Header"
+import {store,wrapper} from "../redux/store";
+import {theme} from '../theme';
+
+import '../styles/globals.scss';
+import 'macro-css';
+
+function App({Component, pageProps}: AppProps) {
     return (
         <>
             <Head>
@@ -19,17 +21,15 @@ function MyApp({Component, pageProps}: AppProps) {
                 <link
                     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
                     rel="stylesheet"
-                ></link>
+                />
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <Provider store={store}>
                     <Header/>
                     <Component {...pageProps} />
-                </Provider>
             </ThemeProvider>
         </>
     )
 }
 
-export default MyApp;
+export default wrapper.withRedux(App);

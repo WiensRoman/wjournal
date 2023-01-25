@@ -7,9 +7,9 @@ import {LoginFormSchema} from "../../../utils/validations"
 import {FormField} from "../../FormField";
 import {LoginDto} from "../../../utils/api/types";
 import {UserApi} from "../../../utils/api";
-import {setCookie} from "nookies";
 import {useAppDispatch} from "../../../redux/hooks";
 import {setUserData} from "../../../redux/slices/user";
+import {setCookie} from "nookies";
 
 interface LoginFormProps {
     onOpenRegister: () => void;

@@ -18,6 +18,7 @@ import {
 import { AuthDialog } from "../AuthDialog";
 import {useAppSelector} from "../../redux/hooks";
 import {selectUserData} from "../../redux/slices/user";
+import Image from "next/image";
 
 export const Header: React.FC = () => {
     const userData = useAppSelector(selectUserData)
@@ -38,11 +39,18 @@ export const Header: React.FC = () => {
                     <MenuIcon/>
                 </IconButton>
                 <Link href="/">
-                    <svg className={styles.logo} viewBox="0 0 24 25">
-                        <path fill="#eBa427" d="M0 19h8.5v6H0v-6z"></path>
-                        <path d="M0 7h8.5v8.5v18l6.5-6V7h9V0H0v7z"></path>
-                        <path fill="rgba(0,0,0,0.15)" d="M7.5 19h1v61-1-6z"></path>
-                    </svg>
+                    {/*<svg className={styles.logo} viewBox="0 0 24 25">*/}
+                    {/*    <path fill="#eBa427" d="M0 19h8.5v6H0v-6z"></path>*/}
+                    {/*    <path d="M0 7h8.5v8.5v18l6.5-6V7h9V0H0v7z"></path>*/}
+                    {/*    <path fill="rgba(0,0,0,0.15)" d="M7.5 19h1v61-1-6z"></path>*/}
+                    {/*</svg>*/}
+                        <Image
+                            src="/static/img/w-logo.svg"
+                            height={40}
+                            width={100}
+                            alt="Logo"
+                        />
+
                 </Link>
 
                 <div className={styles.searchBlock}>

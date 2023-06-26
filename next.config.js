@@ -23,7 +23,17 @@ const nextConfig = {
         protocol: "https",
         hostname: "pic.rutubelist.ru",
         port: ''
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "uploads.turbologo.com",
+        port: ''
+      },
+      {
+        protocol: "https",
+        hostname: "www.google.com",
+        port: ''
+      },
     ]
   }
 }

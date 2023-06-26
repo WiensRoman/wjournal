@@ -23,7 +23,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({onOpenRegister}) => {
         resolver: yupResolver(LoginFormSchema)
     });
 
-    const onSubmit = async (dto: LoginDto) => {
+    const onSubmit = async (dto: LoginDto | any) => {
         try {
             const data = await UserApi.login(dto);
             console.log(data);
@@ -33,6 +33,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({onOpenRegister}) => {
             })
             setErrorMessage('');
             dispatch(setUserData(data))
+
         } catch (err: any) {
             console.warn('Ошибка при регистрации' , err)
             if (err.response) {

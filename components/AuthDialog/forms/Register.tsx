@@ -5,7 +5,7 @@ import {useForm, FormProvider} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup"
 import {RegisterFormSchema} from "../../../utils/validations"
 import {FormField} from "../../FormField";
-import {CreateUserDto, LoginDto} from "../../../utils/api/types";
+import {CreateUserDto} from "../../../utils/api/types";
 import {UserApi} from "../../../utils/api";
 import Alert from "@mui/material/Alert";
 import {setUserData} from "../../../redux/slices/user";
@@ -24,7 +24,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({onOpenRegister, onOpe
         resolver: yupResolver(RegisterFormSchema)
     });
 
-    const onSubmit = async (dto: LoginDto) => {
+    const onSubmit = async (dto: CreateUserDto | any) => {
         try {
             const data = await UserApi.register(dto);
             console.log(data);
